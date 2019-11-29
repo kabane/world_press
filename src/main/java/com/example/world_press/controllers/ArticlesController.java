@@ -1,4 +1,4 @@
-package com.example.world_press.controller;
+package com.example.world_press.controllers;
 
 import java.util.List;
 import javax.transaction.Transactional;
@@ -11,13 +11,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class MainController {
+public class ArticlesController {
   @Autowired
   ArticlesRepository articlesRepository;
-  @RequestMapping("/")
+  @RequestMapping(value = {"/", "/articles"})
+
   public String index(Model model) {
     List<Articles> articles=articlesRepository.findAll();
     model.addAttribute("articles", articles);
-    return "index";
+    return "articles/index";
   }
+
 }
