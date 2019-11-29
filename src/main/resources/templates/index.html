@@ -8,6 +8,11 @@
   <title>Document</title>
 </head>
 <body>
- Hello Bitch
+<table>
+  <tr th:each="article : ${articles}" th:object="${article}">
+    <td th:text="*{id}"></td>
+    <td th:text="*{title}"></td>
+  </tr>
+</table>
 </body>
 </html>
