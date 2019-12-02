@@ -12,6 +12,9 @@
   <tr th:each="article : ${articles}" th:object="${article}">
     <td th:text="*{id}"></td>
     <td th:text="*{title}"></td>
+    <td><a class="btn btn-link" th:href="@{'/articles/' + *{id}}">詳細</a></td>
+    <td><a class="btn btn-link" th:href="@{'/articles/edit/' + *{id}}">更新</a></td>
+    <td>削除</td>
   </tr>
 </table>
 </body>
