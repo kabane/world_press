@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Article</title>
+</head>
+<body>
+<tr th:object="${article}">
+  <td th:text="*{id}"></td>
+  <td th:text="*{title}"></td>
+  <td><a th:href="@{'/articles/' + *{id} + '/edit'}">編集</a></td>
+  <td>
+    <form th:action="@{/articles/{id}/delete(id=*{id})}" th:method="delete">
+      <input class="btn btn-default btn-xs" type="submit" value="削除" />
+    </form>
+  </td>
+</tr>
+<div>
+  <a class="btn btn-link" th:href="@{/articles}">一覧画面へ</a>
+</div>
+</body>
+</html>
