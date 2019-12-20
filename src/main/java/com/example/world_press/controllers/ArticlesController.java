@@ -6,7 +6,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import com.example.world_press.repositories.ArticlesRepository;
-import com.example.world_press.entites.Articles;
+import com.example.world_press.entities.Articles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 

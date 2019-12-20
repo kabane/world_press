@@ -23,12 +23,19 @@ dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
   implementation 'org.springframework.boot:spring-boot-starter-web'
   implementation 'org.springframework.boot:spring-boot-starter-web-services'
+  implementation 'org.springframework.boot:spring-boot-starter-security'
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
   testImplementation('org.springframework.boot:spring-boot-starter-test') {
     exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
   }
+  testImplementation 'org.springframework.security:spring-security-test'
   runtime('mysql:mysql-connector-java')
   compile('org.springframework.boot:spring-boot-starter-data-jpa')
+  compile('org.springframework.security:spring-security-web')
+  compile('org.springframework.security:spring-security-config')
+  compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity5')
+  compileOnly 'org.projectlombok:lombok'
+  annotationProcessor 'org.projectlombok:lombok'
 }
 
 test {
