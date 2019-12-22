@@ -9,13 +9,13 @@
 </head>
 <body>
 <h1>New Article</h1>
-<form th:action="@{/articles}" th:method="post">
+<form th:action="@{/admin/articles}" th:method="post">
   <div class="form-group">
     <label class="control-label">タイトル</label>
     <input class="form-control" type="text" name="title" />
   </div>
   <button class="btn btn-default" type="submit">作成</button>
 </form>
-<a class="btn btn-link" th:href="@{/articles}">一覧画面へ</a>
+<a class="btn btn-link" th:href="@{/admin/articles}">一覧画面へ</a>
 </body>
 </html>
