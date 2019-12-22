@@ -21,8 +21,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //TODO: 最低限の実装。cssなどのstaticファイルなどの許可を追加する必要あります。
     http
       .authorizeRequests()
-      .antMatchers("/login", "/login-error").permitAll()
+      .antMatchers("/login", "/login-error", "/articles/**").permitAll()
       .antMatchers("/**").hasRole("USER")
+      .antMatchers("/admin/**").hasRole("ADMIN")
       .and()
       .formLogin()
       .loginPage("/login").failureUrl("/login-error");
