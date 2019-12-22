@@ -9,17 +9,10 @@
 </head>
 <body>
 <table>
-  <a class="btn btn-link" th:href="@{/articles/new}">新規作成</a>
   <tr th:each="article : ${articles}" th:object="${article}">
     <td th:text="*{id}"></td>
     <td th:text="*{title}"></td>
     <td><a th:href="@{'/articles/' + *{id}}">詳細</a></td>
-    <td><a th:href="@{'/articles/' + *{id} + '/edit'}">編集</a></td>
-    <td>
-      <form th:action="@{/articles/{id}/delete(id=*{id})}" th:method="delete">
-        <input class="btn btn-default btn-xs" type="submit" value="削除" />
-      </form>
-    </td>
   </tr>
 </table>
 </body>

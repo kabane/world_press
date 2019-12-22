@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>New Article</h1>
-<form th:action="@{/articles/{id}(id=*{id})}" th:method="post" th:object="${article}">
+<form th:action="@{/admin/articles/{id}(id=*{id})}" th:method="post" th:object="${article}">
   <div class="form-group">
     <label class="control-label">タイトル</label>
     <input class="form-control" type="text" name="title" th:field="*{title}" />
